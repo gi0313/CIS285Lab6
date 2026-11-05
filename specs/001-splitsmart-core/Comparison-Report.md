@@ -1,9 +1,9 @@
-# SplitSmart — Cross-check and Independent Agent Comparison Report
+# SplitSmart — Cross-check: Spec Kit via Copilot vs Direct Copilot
 
 **Date:** 2026-11-04  
 **Reviewer:** ChatGPT  
-**Scope:** Canonical requirements and spec reviewed. **Spec Kit vs Claude Code document comparison is NOT YET POSSIBLE.**  
-**Status:** PRELIMINARY / INDEPENDENT AGENT OUTPUTS PENDING. No claim of actual Spec Kit/Claude execution.
+**Scope:** Canonical requirements and spec reviewed. **Spec Kit via GitHub Copilot vs independent direct GitHub Copilot comparison is NOT YET POSSIBLE.**  
+**Status:** PRELIMINARY / INDEPENDENT AGENT OUTPUTS PENDING. No claim of actual Spec Kit or direct Copilot execution.
 
 ## 1. Evidence inventory / provenance
 
@@ -14,12 +14,12 @@
 | `specs/001-splitsmart-core/spec.md` | YES | Existing draft, seven user stories, five resolved clarifications, six open questions |
 | `specs/001-splitsmart-core/checklists/requirements.md` | YES | Existing quality checklist reports pass while open policy remains |
 | `speckit/Architecture.md`, `speckit/Design.md` | NOT GENERATED IN THIS SESSION | Reserved for a genuine Spec Kit/Copilot run |
-| `claude/Architecture.md`, `claude/Design.md` | NOT GENERATED IN THIS SESSION | Reserved for a genuine independent Claude Code run |
+| `copilot/Architecture.md`, `copilot/Design.md` | NOT GENERATED IN THIS SESSION | Reserved for a genuine independent direct GitHub Copilot run |
 | `chatgpt-draft/Architecture.md`, `chatgpt-draft/Design.md` | CHATGPT DRAFTS ON REVIEW BRANCH | Baseline proposals only; **not** substitutes for the other agents |
 
 ## 2. Comparison matrix — actual agent results
 
-| Evaluation criterion | Spec Kit actual output | Claude Code actual output | Cross-check result |
+| Evaluation criterion | Spec Kit via Copilot output | Direct Copilot output | Cross-check result |
 |---|---|---|---|
 | Architecture boundaries | NOT RUN/NOT VERIFIED | NOT RUN/NOT VERIFIED | PENDING |
 | Domain entities and API design | NOT RUN/NOT VERIFIED | NOT RUN/NOT VERIFIED | PENDING |
@@ -29,7 +29,7 @@
 | Realistic web vs Swing platform handling | NOT RUN/NOT VERIFIED | NOT RUN/NOT VERIFIED | PENDING |
 | JUnit 5 / PlantUML traceability | NOT RUN/NOT VERIFIED | NOT RUN/NOT VERIFIED | PENDING |
 
-**Do not replace this table with imagined ratings.** When both independent output pairs exist, run Prompt C from `prompts/SplitSmart-SpecKit-Claude-ChatGPT.md` and document concrete citations to headings and line ranges.
+**Do not replace this table with imagined ratings.** When both independent output pairs exist, run Prompt C from `prompts/SplitSmart-SpecKit-Copilot-ChatGPT.md` and document concrete citations to headings and line ranges.
 
 ## 3. Preliminary cross-check — original requirement vs existing spec
 
@@ -88,7 +88,7 @@ These are existing specification decisions, not new answers collected during thi
 
 - [ ] Spec Kit genuinely executes constitution/specify/clarify/plan on the existing feature, using responses to actual clarification questions.
 - [ ] Spec Kit exports independent `speckit/Architecture.md` and `speckit/Design.md`.
-- [ ] Claude Code independently reads canonical sources (not Spec Kit output) and exports `claude/Architecture.md` and `claude/Design.md`.
+- [ ] direct GitHub Copilot independently reads canonical sources (not Spec Kit output) and exports `copilot/Architecture.md` and `copilot/Design.md`.
 - [ ] ChatGPT verifies presence/provenance and reports exact side-by-side evidence and requirements traceability for both pairs.
 - [ ] Security, ledger, rounding, group membership, receipt, reports and failure paths checked independently.
 - [ ] Product owner signs off platform and outstanding policies.
@@ -96,6 +96,10 @@ These are existing specification decisions, not new answers collected during thi
 
 ## 8. Recommendation
 
-**BLOCK final design approval pending platform decision and genuinely independent design artifacts.** Existing constitutional and specification files are real and usable. This report is an honest baseline cross-check, not the requested final two-agent comparison. The prompt pack on `main` provides complete runnable prompts for each subsequent agent and for final comparison.
+**BLOCK final design approval pending platform decision and genuinely independent design artifacts.** Existing constitutional and specification files are real and usable. This report is an honest baseline cross-check, not the requested final two-workflow Copilot comparison. The prompt pack on `main` provides complete runnable prompts for each subsequent agent and for final comparison.
 
 **No builds, automated tests, or external agent executions were performed in preparing this report.**
+
+## 9. Workflow comparison fairness
+
+Both generators rely on GitHub Copilot; only the generation workflow differs. The Spec Kit path uses the installed `/speckit-*` commands and their planning artifacts. The direct Copilot path must use a fresh context, the same canonical input snapshot, no Spec Kit commands, and no access to the Spec Kit plans or output documents. Version and commit provenance should be recorded for a defensible comparison. This report has **not** verified that either workflow ran. The current prompt pack is `prompts/SplitSmart-SpecKit-Copilot-ChatGPT.md`.
