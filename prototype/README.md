@@ -1,4 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SplitSmart
+
+SplitSmart is a shared-expense tracker built with Next.js, TypeScript, Prisma, and SQLite. Groups, members, expenses, and their allocated shares are saved in the local database.
+
+## Run locally
+
+```bash
+cd prototype
+npm ci
+cp .env.example .env
+npm run db:migrate
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000). The default SQLite database is `prototype/dev.db`; the database file and `.env` are ignored by Git.
+
+## How splitting works
+
+Expense amounts are validated and converted to integer cents by the API. Each expense is divided equally between the selected participants. If cents remain, they are assigned one at a time in ascending member-ID order, so the allocation is deterministic. A member’s balance is the total they paid minus their allocated shares; a positive balance means they should receive money and a negative balance means they owe money.
+
+## Available commands
+
+- `npm run dev` — start the development server.
+- `npm run build` — build the application.
+- `npm run lint` — run ESLint.
+- `npm run db:migrate` — apply or create local Prisma migrations.
+- `npm run db:generate` — regenerate the Prisma client.
 
 ## Getting Started
 
